@@ -37,5 +37,17 @@ namespace TaskListAngularLab.Models
             }
             return match;
         }
+
+        public void InsertTask(Task t)
+        {
+            string sql = $"insert into todotasks values(0, '{t.TmName}', '{t.TaskName}', '{t.TaskDescription}', '{t.DueDate.ToString("yyyy-MM-dd")}', {t.isCompleted})";
+            using (var connect = new MySqlConnection(Secret.Connection))
+            {
+                connect.Open();
+                connect.Query<Task>(sql);
+                connect.Close();
+            }
+
+        }
     }
 }

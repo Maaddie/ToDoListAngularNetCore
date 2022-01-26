@@ -24,5 +24,11 @@ namespace TaskListAngularLab.Controllers
         {
             return taskDAL.GetTask(id);
         }
+
+        [HttpPost("insertNewTask")]
+        public void InsertMovie(Task t)
+        {
+            taskDAL.InsertTask(t);
+        }
     }
 }
