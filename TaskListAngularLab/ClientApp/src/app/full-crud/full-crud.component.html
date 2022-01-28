@@ -7,11 +7,11 @@
         <p>Is completed: {{t.isCompleted}}</p>
         <button (click)="DeleteEntry(t.id, i)">Delete {{t.taskName}}</button>
     </div>
-    <!--<app-update-movie id="edit{{m.id}}" style="display: none;" [Id]=m.id></app-update-movie> -->
+    <app-update-task id="edit{{t.id}}" style="display: none;" [Id]=t.id></app-update-task> 
 
-    <!-- <button (click)="EditMovie(m.id)">Edit {{m.title}}</button> -->
+    <button (click)="EditTask(t.id)">Edit {{t.taskName}}</button>
 </div>
 <!--This creates a reference to another component, our create movie component
 in angular you are allowed to reuse and reference as many components as you want at once 
 -->
-<!-- <app-create-task></app-create-task> -->
+<app-create-task></app-create-task>

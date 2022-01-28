@@ -60,5 +60,18 @@ namespace TaskListAngularLab.Models
                 connect.Close();
             }
         }
+
+        public void UpdateTask(int id, Task newInfo)
+        {
+            string sql = $"update todotasks set TmName='{newInfo.TmName}', TaskName='{newInfo.TaskName}', TaskDescription='{newInfo.TaskDescription}', DueDate='{newInfo.DueDate.ToString("yyyy-MM-dd")}', isCompleted={newInfo.isCompleted}  where id={id}";
+            using (var connect = new MySqlConnection(Secret.Connection))
+            {
+                connect.Open();
+                connect.Query<Task>(sql);
+                connect.Close();
+            }
+
+        }
     }
 }
+

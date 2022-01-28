@@ -31,5 +31,9 @@ DeleteTask(id:number){
   return this.http.delete(this.url + "/deleteTask/" + id);
 }
 
+UpdateTask(newTask:Task, id:number){
+  return this.http.put(this.url + "/updateTask/" + id, newTask);
+}
+
 }
 

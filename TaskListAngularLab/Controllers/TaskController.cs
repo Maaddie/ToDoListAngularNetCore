@@ -36,5 +36,38 @@ namespace TaskListAngularLab.Controllers
         {
             taskDAL.DeleteTask(id);
         }
+
+        [HttpPut("updateTask/{id}")]
+        //The movie object will come from the body of the http call
+        public void UpdateTask(int id, Task t)
+        {
+            Task initial = taskDAL.GetTask(id);
+            if (t.TaskName == null || t.TaskName == "")
+            {
+                t.TaskName = initial.TaskName;
+            }
+
+            if (t.TaskDescription == null || t.TaskDescription == "")
+            {
+                t.TaskDescription = initial.TaskDescription;
+            }
+
+            if (t.TmName == null || t.TmName == "")
+            {
+                t.TmName = initial.TmName;
+            }
+
+            if (t.DueDate == null)
+            {
+                t.DueDate = initial.DueDate;
+            }
+
+            //if(t.isCompleted == null)
+            //{
+            //    t.isCompleted = initial.isCompleted;
+            //}
+
+            taskDAL.UpdateTask(id, t);
+        }
     }
 }

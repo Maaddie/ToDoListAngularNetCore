@@ -1,0 +1,28 @@
+<h2>Edit a Task</h2>
+
+<p>Team Member Name</p>
+<input type="text" id="TmName{{Id}}" value="{{task.tmName}}"/>
+
+<br>
+
+<p>Task Name</p>
+<input type="text" id="TaskName{{Id}}" value="{{task.taskName}}" />
+
+<br>
+
+<p>Task Description</p>
+<input type="text" id="TaskDescription{{Id}}" value="{{task.taskDescription}}"/>
+
+<br>
+
+<p>Due Date</p>
+<input type="date" id="DueDate{{Id}}" value="{{task.dueDate}}"/>
+
+<br>
+
+<p>Is Completed</p>
+<br>
+<input type="checkbox" id="IsCompleted{{Id}}" value="{{task.isCompleted}}" />
+
+
+<button (click)="UpdateTask()">Update Task{{task.taskName}}</button>
