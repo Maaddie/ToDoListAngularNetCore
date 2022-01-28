@@ -30,5 +30,11 @@ namespace TaskListAngularLab.Controllers
         {
             taskDAL.InsertTask(t);
         }
+
+        [HttpDelete("deleteTask/{id}")]
+        public void DeleteTask(int id)
+        {
+            taskDAL.DeleteTask(id);
+        }
     }
 }

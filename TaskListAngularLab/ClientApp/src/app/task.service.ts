@@ -26,5 +26,10 @@ CreateTask(t: Task) {
   console.log(t);
   return this.http.post(this.url + "/insertNewTask/", t);
 }
+
+DeleteTask(id:number){
+  return this.http.delete(this.url + "/deleteTask/" + id);
+}
+
 }
 

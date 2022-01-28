@@ -11,6 +11,7 @@ import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { TaskListComponent } from './task-list/task-list.component';
 import { CreateTaskComponent } from './create-task/create-task.component';
+import { FullCrudComponent } from './full-crud/full-crud.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { CreateTaskComponent } from './create-task/create-task.component';
     FetchDataComponent,
     TaskListComponent,
     CreateTaskComponent,
+    FullCrudComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -31,7 +33,9 @@ import { CreateTaskComponent } from './create-task/create-task.component';
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
       {path: 'task-list', component: TaskListComponent},
-      {path: 'create-task', component:CreateTaskComponent}
+      {path: 'create-task', component:CreateTaskComponent},
+      {path: 'full-crud', component:FullCrudComponent},
+      
     ])
   ],
   providers: [],

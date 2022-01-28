@@ -1,0 +1,17 @@
+<div style="border: 1px solid black;" *ngFor="let t of tasks; let i = index">
+    <div id="display{{t.id}}">
+        <p>Task Name: {{t.taskName}}</p>
+        <p>Task Description: {{t.taskDescription}}</p>
+        <p>Team Member Name: {{t.tmName}}</p>
+        <p>Due Date: {{t.dueDate}}</p>
+        <p>Is completed: {{t.isCompleted}}</p>
+        <button (click)="DeleteEntry(t.id, i)">Delete {{t.taskName}}</button>
+    </div>
+    <!--<app-update-movie id="edit{{m.id}}" style="display: none;" [Id]=m.id></app-update-movie> -->
+
+    <!-- <button (click)="EditMovie(m.id)">Edit {{m.title}}</button> -->
+</div>
+<!--This creates a reference to another component, our create movie component
+in angular you are allowed to reuse and reference as many components as you want at once 
+-->
+<!-- <app-create-task></app-create-task> -->
